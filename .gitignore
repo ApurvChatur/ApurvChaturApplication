@@ -1,0 +1,8 @@
+/site/backend/node_modules
+/site/backend/src/config/
+
+site/frontend/node_modules
+site/frontend/.env
+
+site/admin/node_modules
+site/admin/.env

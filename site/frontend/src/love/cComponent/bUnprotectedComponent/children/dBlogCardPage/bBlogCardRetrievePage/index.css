@@ -1,0 +1,136 @@
+.blog-card-single__container {
+  display: grid;
+  grid-template-columns: 35% 50%;
+  gap: 15%;
+  padding-bottom: 2em;
+}
+
+.blog-card-single__me {
+  width: 100%;
+  height: 66.66%;
+  aspect-ratio: 1/1;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+  display: grid;
+  place-items: center;
+}
+
+.blog-card-single__me-image {
+  border-radius: 2rem;
+  overflow: hidden;
+  transform: rotate(10deg);
+  transition: var(--transition);
+}
+
+.blog-card-single__me-image:hover {
+  transform: rotate(0);
+}
+
+.blog-card-single__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.blog-card-single__card {
+  background: var(--color-bg-variant);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.blog-card-single__card:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
+}
+
+.blog-card-single__icon {
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.blog-card-single__card h5 {
+  font-size: 0.95rem;
+}
+
+.blog-card-single__card small {
+  font-size: 0.7rem;
+  color: var(--color-light);
+}
+
+.blog-card-single__content p:nth-child(1) {
+  margin: 2rem 0 1rem;
+}
+
+.blog-card-single__content p {
+  margin: 1rem 0 2.6rem;
+}
+
+
+.blog-card-single__more {
+  font-weight: lighter !important;
+}
+
+.rich-text {
+  padding: 1em 2em;
+}
+
+.rich-text p {
+  margin: 1rem 0 1rem;
+}
+
+.rich-text li {
+  margin: 0.2rem 1rem 0 2rem;
+  list-style: disc !important;
+}
+
+
+
+
+
+/* =================== MEDIA QUERIES (MEDIUM DEVICES) =================== */
+@media screen and (max-width: 1024px) {
+  .blog-card-single__container {
+      grid-template-columns: 1fr;
+      gap: 0;
+  }
+
+  .blog-card-single__me {
+      width: 50%;
+      margin: 2rem auto 4rem;
+  }
+
+  .blog-card-single__content p {
+      margin: 1rem 0 1.5rem;
+      text-align: left;
+  }
+}
+
+
+/* =================== MEDIA QUERIES (SMALL DEVICES) =================== */
+@media screen and (max-width: 600px) {
+  .blog-card-single__me {
+      width: 65%;
+      margin: 0 auto 3rem;
+  }
+
+  .blog-card-single__cards {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+  }
+
+  .blog-card-single__content {
+    text-align: left;
+  }
+
+  .blog-card-single__content p {
+      margin: 1.5rem 0;
+      text-align: left;
+  }
+}
+
+

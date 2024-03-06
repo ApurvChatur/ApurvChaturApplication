@@ -1,0 +1,47 @@
+import React, { useEffect } from 'react'
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { Action } from './extra/State';
+
+// Extra
+import APIs from './extra/APIs';
+
+// Component
+import HomePageComponent from 'src/love/cComponent/bUnprotectedComponent/children/aHomePage'
+import PortfolioCardListPageComponent from 'src/love/cComponent/bUnprotectedComponent/children/bPortfolioCardPage/aPortfolioCardListPage';
+
+
+const PortfolioCardListPage = ({ ReduxUltimate }) => {
+	// Redux
+	const Redux = {
+		state: useSelector((fullState) => fullState.PortfolioCardListPageState),
+		dispatch: useDispatch(),
+		action: Action,
+	};
+
+	// API Calls
+	const APICalls = {
+		ListAPICall: () => APIs.ListAPI(Redux, ReduxUltimate),
+	}
+
+	// All Renders
+	// First Render
+	useEffect(() => {
+		APICalls.ListAPICall()
+	}, [])
+
+	// Extra Render
+	useEffect(() => {
+		console.log(Redux.state)
+	}, [Redux.state])
+	
+	// JSX
+  return (
+		<React.Fragment>
+			<PortfolioCardListPageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
+		</React.Fragment>
+  )
+}
+
+export default PortfolioCardListPage
