@@ -7,9 +7,9 @@ const APIBase = (props) => {
         method: props.method,
         url: props.url,
         baseURL: import.meta.env.VITE_ENVIRONMENT === "Production" ? (
-            import.meta.env.VITE_APPLICATION === "ApurvChatur" ? "https://backend-soup-for-apurv-chatur-application.onrender.com" :
-            import.meta.env.VITE_APPLICATION === "AnushreeMandape" ? "https://backend-soup-for-anushree-mandape.onrender.com" :
-            import.meta.env.VITE_APPLICATION === "SofieBerkin" ? "https://backend-soup-for-sofie-berkin-application.onrender.com" : "NULL"
+            import.meta.env.VITE_APPLICATION === "ApurvChatur" ? "https://soup-apurv-chatur-backend.onrender.com" :
+            import.meta.env.VITE_APPLICATION === "AnushreeMandape" ? "https://soup-anushree-mandape-backend.onrender.com" :
+            import.meta.env.VITE_APPLICATION === "SofieBerkin" ? "https://soup-sofie-berkin-backend.onrender.com" : "NULL"
         ) : "http://localhost:8000",
         headers: { 
             'Content-Type': 'application/json',
