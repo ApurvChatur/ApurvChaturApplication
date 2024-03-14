@@ -22,7 +22,7 @@ const HomePageComponent = ({ Redux, ReduxUltimate }) => {
           {Redux?.state?.ReceivedObject?.Retrieve?.PortfolioRetrieve && <PortfolioComponent Redux={Redux} />}
           {Redux?.state?.ReceivedObject?.Retrieve?.EventRetrieve && <EventComponent Redux={Redux} />}
           {Redux?.state?.ReceivedObject?.Retrieve?.BlogRetrieve && <BlogComponent Redux={Redux} />}
-          <TestimonialComponent Redux={Redux} />
+          {/* <TestimonialComponent Redux={Redux} /> */}
           {/* <ContactComponent Redux={Redux} /> */}
         </React.Fragment>
       }
