@@ -43,7 +43,7 @@ const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                   {Redux.state.ReceivedObject?.EventCardRetrieve?.links &&
                     Redux.state.ReceivedObject?.EventCardRetrieve?.links.map(each => {
                       return (
-                        <a href={each.url} target="_blank" rel='noreferrer' className={`btn ${(each.label === 'App Demo' || each.label === "Admin Demo") && 'btn-primary'}`} >{each.label}</a>
+                        <a href={each.url} target="_blank" rel='noreferrer' className={`btn ${(each.title === 'App Demo' || each.title === "Admin Demo") && 'btn-primary'}`} >{each.title}</a>
                       )
                     })
                   }
