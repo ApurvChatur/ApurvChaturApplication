@@ -19,7 +19,7 @@ const Navbar = ({ ReduxUltimate }) => {
 			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#about`} className={activeNav === '#about' ? 'active' : ''} onClick={() => setActiveNav('#about')} ><AiOutlineUser /></HashLink>
 			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#experience`} className={activeNav === '#experience' ? 'active' : ''} onClick={() => setActiveNav('#experience')} ><BiBook /></HashLink>
 			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#service`} className={activeNav === '#service' ? 'active' : ''} onClick={() => setActiveNav('#service')} ><RiServiceLine /></HashLink>
-			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#contact`} className={activeNav === '#contact' ? 'active' : ''} onClick={() => setActiveNav('#contact')} ><BiMessageSquareDetail /></HashLink>
+			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#portfolio`} className={activeNav === '#portfolio' ? 'active' : ''} onClick={() => setActiveNav('#portfolio')} ><BiMessageSquareDetail /></HashLink>
 		</nav>
 	)
 }

@@ -31,10 +31,10 @@ const AboutComponent = ({Redux}) => {
               return (
                 <article className='about__card' key={index} >
                   {
-										each.icon === "award" ? <FaAward className='about__icon' ></FaAward> :
-										each.icon === "project" ? <AiOutlineFundProjectionScreen className='about__icon' ></AiOutlineFundProjectionScreen> :
-										each.icon === "company" ? <BsBuilding className='about__icon' ></BsBuilding> :
-										each.icon === "experience" ? <AiOutlineUserAdd className='about__icon' ></AiOutlineUserAdd> : <BiAtom className='about__icon' ></BiAtom>
+										each.icon.toLowerCase() === "award" ? <FaAward className='about__icon' ></FaAward> :
+										each.icon.toLowerCase() === "project" ? <AiOutlineFundProjectionScreen className='about__icon' ></AiOutlineFundProjectionScreen> :
+										each.icon.toLowerCase() === "company" ? <BsBuilding className='about__icon' ></BsBuilding> :
+										each.icon.toLowerCase() === "experience" ? <AiOutlineUserAdd className='about__icon' ></AiOutlineUserAdd> : <BiAtom className='about__icon' ></BiAtom>
 									}
                   <h5>{each.title}</h5>
                   <small>{each.subtitle}</small>
@@ -46,7 +46,7 @@ const AboutComponent = ({Redux}) => {
           {/* <p>{object.description}</p> */}
           <div>{parse(object.description)}</div>
 
-          <a href='#blog' className='btn' style={{ marginRight: "1.2rem" }} >See Blogs</a>
+          <a href='#event' className='btn' style={{ marginRight: "1.2rem" }} >Check Events</a>
           <a href='#contact' className='btn btn-primary' >Let's Talk</a>
         </div>
       </div>            

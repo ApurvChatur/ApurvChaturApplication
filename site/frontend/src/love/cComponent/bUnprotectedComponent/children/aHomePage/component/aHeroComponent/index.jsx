@@ -4,6 +4,8 @@ import {BsInstagram, BsLinkedin} from 'react-icons/bs'
 import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { RiTwitterFill } from 'react-icons/ri';
 import { BiLink } from "react-icons/bi";
+import { BsThreads } from "react-icons/bs";
+
 
 
 const HeroComponent = ({Redux}) => {
@@ -20,7 +22,7 @@ const HeroComponent = ({Redux}) => {
 
 				<div className='cta' >
 					<a href={object.resume.url} download target='_blank' className='btn' rel="noreferrer" >Download CV</a>
-					<a href='#contact'  className='btn btn-primary' >Let's Talk</a>
+					<a href='#portfolio'  className='btn btn-primary' >Let's Start</a>
 				</div>
 
 				<div className='header__socials' >
@@ -29,11 +31,12 @@ const HeroComponent = ({Redux}) => {
 							return (
 								<a href={each.url} target="_blank" rel='noreferrer' key={index}>
 									{
-										each.icon === "github" ? <FaGithub /> :
-										each.icon === "linkedin" ? <BsLinkedin /> :
-										each.icon === "facebook" ? <FaFacebookF /> :
-										each.icon === "instagram" ? <BsInstagram /> :
-										each.icon === "twitter" ? <RiTwitterFill /> : <BiLink />
+										each.icon.toLowerCase() === "github" ? <FaGithub /> :
+										each.icon.toLowerCase() === "linkedin" ? <BsLinkedin /> :
+										each.icon.toLowerCase() === "facebook" ? <FaFacebookF /> :
+										each.icon.toLowerCase() === "instagram" ? <BsInstagram /> :
+										each.icon.toLowerCase() === "threads" ? <BsThreads /> :
+										each.icon.toLowerCase() === "twitter" ? <RiTwitterFill /> : <BiLink />
 									}
 								</a>
 							)
