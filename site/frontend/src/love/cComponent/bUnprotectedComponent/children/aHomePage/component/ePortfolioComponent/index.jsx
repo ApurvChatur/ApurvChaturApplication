@@ -31,7 +31,7 @@ const PortfolioComponent = ({Redux, disable}) => {
 									{each.dLinks &&
 										each.dLinks.map((each1, index1) => {
 											return (
-												<a href={each1.url} key={index1} target="_blank" rel='noreferrer' className={`btn ${(each1.title === 'App Demo' || each1.title === "Admin Demo") && 'btn-primary'}`} >{each1.title}</a>
+												<a href={each1.url} key={index1} target="_blank" rel='noreferrer' className={`btn ${(each1.title === 'Visit Application' || each1.title === "Visit Admin") && 'btn-primary'}`} >{each1.title}</a>
 											)
 										})
 									}
