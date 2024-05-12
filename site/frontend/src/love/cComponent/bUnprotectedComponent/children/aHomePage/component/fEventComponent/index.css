@@ -37,7 +37,8 @@
 }
 
 .event__item-cta {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 .event__details-icon {

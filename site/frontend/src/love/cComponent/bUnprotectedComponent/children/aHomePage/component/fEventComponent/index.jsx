@@ -44,7 +44,11 @@ const EventComponent = ({Redux, disable}) => {
 									{each.links &&
 										each.links.map((each1, index1) => {
 											return (
-												<a href={each1.url} key={index1} target="_blank" rel='noreferrer' className={`btn ${(each1.label === 'App Demo' || each1.label === "Admin Demo") && 'btn-primary'}`} >{each1.label}</a>
+												<a 
+													href={each1.url} key={index1} target="_blank" rel='noreferrer' 
+													style={{padding: '0.3rem 0.8rem'}}
+													className={`btn ${(each1.label === 'App Demo' || each1.label === "Admin Demo") && 'btn-primary'}`} >{each1.label}
+												</a>
 											)
 										})
 									}

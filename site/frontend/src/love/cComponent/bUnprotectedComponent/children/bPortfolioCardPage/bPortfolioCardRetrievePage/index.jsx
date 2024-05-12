@@ -31,7 +31,11 @@ const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                   {Redux.state.ReceivedObject?.PortfolioCardRetrieve?.links &&
                     Redux.state.ReceivedObject?.PortfolioCardRetrieve?.links.map((each, index) => {
                       return (
-                        <a href={each.url} key={index} target="_blank" rel='noreferrer' className={`btn ${(each.title === 'Visit Application' || each.title === "Visit Admin") && 'btn-primary'}`} >{each.title}</a>
+                        <a 
+                          href={each.url} key={index} target="_blank" rel='noreferrer' 
+                          style={{padding: '0.3rem 0.8rem'}}
+                          className={`btn ${(each.title === 'Visit Application' || each.title === "Visit Admin") && 'btn-primary'}`} >{each.title}
+                        </a>
                       )
                     })
                   }

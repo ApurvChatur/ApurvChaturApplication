@@ -125,9 +125,9 @@ img {
         width: var(--container-width-md);
     }
 
-    section {
+    /* section {
         margin-top: 6rem;
-    }
+    } */
 }
 
 
