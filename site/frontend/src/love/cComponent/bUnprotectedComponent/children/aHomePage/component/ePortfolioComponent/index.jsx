@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css';
 import { Link, useParams } from 'react-router-dom';
 import FinalRouteName from 'src/love/gRoute/FinalRouteName';
+import { FaGithub, FaEye, FaShieldAlt, FaLink } from "react-icons/fa";
 
 const PortfolioComponent = ({Redux, disable}) => {
 	// Variables
@@ -26,15 +27,37 @@ const PortfolioComponent = ({Redux, disable}) => {
 									<img src={each?.aImage?.url} alt="" ></img>
 								</div>
 								<h3><Link to={`${FinalRouteName?.GlobalRoute?.PortfolioCardRetrieveRoute}/${each._id}`}>{each.aTitle}</Link></h3>
-								<p className='text-light' >{each.aSubtitle}</p>
+								<p className='text-light' style={{marginTop: 0}} >{each.aSubtitle}</p>
 								<div className='portfolio__item-cta' >
 									{each.dLinks &&
 										each.dLinks.map((each1, index1) => {
 											return (
 												<a 
 													href={each1.url} key={index1} target="_blank" rel='noreferrer' 
-													style={{padding: '0.3rem 0.8rem'}}
-													className={`btn ${(each1.title === 'Visit Application' || each1.title === "Visit Admin") && 'btn-primary'}`} >{each1.title}
+													style={{padding: '0.4rem 0.8rem'}}
+													className='btn btn-primary'
+												>
+													{
+														each1.title === 'Visit Application' ? (
+															<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+																<FaEye style={{marginRight: '0.5rem'}} /> Visit Application
+															</div>
+														) :
+														each1.title === "Visit Admin" ? (
+															<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+																<FaShieldAlt style={{marginRight: '0.5rem'}} /> Visit Admin
+															</div>
+														) :
+														each1.title === "Code" ? (
+															<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+																<FaGithub style={{marginRight: '0.5rem'}} /> Code
+															</div>
+														) : (
+															<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+																<FaLink style={{marginRight: '0.5rem'}} /> {each1.title}
+															</div>
+														)
+													}
 												</a>
 											)
 										})

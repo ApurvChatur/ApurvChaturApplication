@@ -6,6 +6,7 @@ import { BiTargetLock } from 'react-icons/bi';
 import { AiOutlineSend } from 'react-icons/ai';
 import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 import parse from 'html-react-parser';
+import { FaLink } from 'react-icons/fa';
 
 
 const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
@@ -31,9 +32,15 @@ const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                 <h4 style={{marginTop: "0.5em"}} className="text-light" >{Redux.state.ReceivedObject?.EventCardRetrieve?.subtitle}</h4>
                 
                 <div style={{marginTop: "1.5em"}} >
-                  <BsFillSkipStartFill className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Start: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.start}</small> <br />
-                  <BiTargetLock className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Target: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.target}</small> <br />
-                  <AiOutlineSend className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Complete: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.complete}</small>
+                  <span style={{display: 'flex', alignItems: 'center'}}>
+										<BsFillSkipStartFill className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Start: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.start}</small> <br />
+									</span>
+									<span style={{display: 'flex', alignItems: 'center'}}>
+										<BiTargetLock className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Target: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.target}</small> <br />
+									</span>
+									<span style={{display: 'flex', alignItems: 'center'}}>
+										<AiOutlineSend className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Complete: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.complete}</small>
+									</span>
                 </div>
 
                 {/* <p>{(Redux.state.ReceivedObject?.EventCardRetrieve?.description || "")}</p> */}
@@ -45,8 +52,12 @@ const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                       return (
                         <a 
                           href={each.url} target="_blank" rel='noreferrer' 
-                          style={{padding: '0.3rem 0.8rem'}}
-                          className={`btn ${(each.title === 'App Demo' || each.title === "Admin Demo") && 'btn-primary'}`} >{each.title}
+													style={{padding: '0.4rem 0.8rem'}}
+                          className='btn btn-primary' 
+                        >
+                          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <FaLink style={{marginRight: '0.5rem'}} /> {each.title}
+                          </div>
                         </a>
                       )
                     })

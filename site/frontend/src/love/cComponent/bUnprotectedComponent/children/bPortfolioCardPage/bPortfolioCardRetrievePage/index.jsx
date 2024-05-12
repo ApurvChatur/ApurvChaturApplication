@@ -3,6 +3,7 @@ import Header from '../../../component/aHeader';
 import "./index.css";
 import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 import parse from 'html-react-parser';
+import { FaLink, FaGithub, FaEye, FaShieldAlt } from "react-icons/fa";
 
 
 const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
@@ -33,8 +34,30 @@ const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                       return (
                         <a 
                           href={each.url} key={index} target="_blank" rel='noreferrer' 
-                          style={{padding: '0.3rem 0.8rem'}}
-                          className={`btn ${(each.title === 'Visit Application' || each.title === "Visit Admin") && 'btn-primary'}`} >{each.title}
+													style={{padding: '0.4rem 0.8rem'}}
+                          className='btn btn-primary'
+                        >
+                          {
+                            each.title === 'Visit Application' ? (
+                              <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <FaEye style={{marginRight: '0.5rem'}} /> Visit Application
+                              </div>
+                            ) :
+                            each.title === "Visit Admin" ? (
+                              <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <FaShieldAlt style={{marginRight: '0.5rem'}} /> Visit Admin
+                              </div>
+                            ) :
+                            each.title === "Code" ? (
+                              <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <FaGithub style={{marginRight: '0.5rem'}} /> Code
+                              </div>
+                            ) : (
+                              <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <FaLink style={{marginRight: '0.5rem'}} /> {each.title}
+                              </div>
+                            )
+                          }
                         </a>
                       )
                     })

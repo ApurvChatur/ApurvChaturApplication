@@ -5,6 +5,7 @@ import { BsFillCalendarDateFill, BsFillSkipStartFill } from 'react-icons/bs';
 import { BiTargetLock } from 'react-icons/bi';
 import { AiOutlineSend } from 'react-icons/ai';
 import FinalRouteName from 'src/love/gRoute/FinalRouteName';
+import { FaLink } from 'react-icons/fa';
 
 const EventComponent = ({Redux, disable}) => {
 	// Variables
@@ -32,12 +33,18 @@ const EventComponent = ({Redux, disable}) => {
 									{each?.dDate?.complete ? "Event Closed" : "Event Open"} 
 								</span>
 								<h3><Link to={`${FinalRouteName?.GlobalRoute?.EventCardRetrieveRoute}/${each._id}`}>{each.aTitle}</Link></h3>
-								<p className='text-light' >{each.aSubtitle}</p>
+								<p className='text-light' style={{marginTop: 0}} >{each.aSubtitle}</p>
 
 								<div style={{marginTop: "1.5em"}} >
-									<BsFillSkipStartFill className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Start: {each?.dDate?.start}</small> <br />
-									<BiTargetLock className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Target: {each?.dDate?.target}</small> <br />
-									<AiOutlineSend className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Complete: {each?.dDate?.complete}</small>
+									<span style={{display: 'flex', alignItems: 'center'}}>
+										<BsFillSkipStartFill className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Start: {each?.dDate?.start}</small> <br />
+									</span>
+									<span style={{display: 'flex', alignItems: 'center'}}>
+										<BiTargetLock className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Target: {each?.dDate?.target}</small> <br />
+									</span>
+									<span style={{display: 'flex', alignItems: 'center'}}>
+										<AiOutlineSend className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Complete: {each?.dDate?.complete}</small>
+									</span>
 								</div>
 
 								<div className='event__item-cta' >
@@ -46,8 +53,12 @@ const EventComponent = ({Redux, disable}) => {
 											return (
 												<a 
 													href={each1.url} key={index1} target="_blank" rel='noreferrer' 
-													style={{padding: '0.3rem 0.8rem'}}
-													className={`btn ${(each1.label === 'App Demo' || each1.label === "Admin Demo") && 'btn-primary'}`} >{each1.label}
+													style={{padding: '0.4rem 0.8rem'}}
+													className='btn btn-primary' 
+												>
+													<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+														<FaLink style={{marginRight: '0.5rem'}} /> {each1.title}
+													</div>
 												</a>
 											)
 										})

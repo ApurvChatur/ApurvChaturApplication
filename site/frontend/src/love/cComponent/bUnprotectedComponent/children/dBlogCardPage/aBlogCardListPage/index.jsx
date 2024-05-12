@@ -21,7 +21,7 @@ const BlogCardListPageComponent = ({ ReduxUltimate, Redux }) => {
                         <img src={each?.aImage?.url} alt="" ></img>
                       </div>
                       <h3><Link to={`${FinalRouteName?.GlobalRoute?.BlogCardRetrieveRoute}/${each._id}`}>{each.aTitle}</Link></h3>
-                      <p className='text-light' >{each.aSubtitle}</p>
+                      <p className='text-light' style={{marginTop: 0}} >{each.aSubtitle}</p>
                     </article>
                   )
                 }) }
