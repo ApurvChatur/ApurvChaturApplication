@@ -4,6 +4,7 @@ import "./index.css";
 import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 import parse from 'html-react-parser';
 import { FaLink, FaGithub, FaEye, FaShieldAlt } from "react-icons/fa";
+import ImageSliderComponent from './component/aImageSliderComponent';
 
 
 const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
@@ -65,6 +66,17 @@ const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                 </div>	
               </div>
             </div>  
+
+            {Redux.state.ReceivedObject?.PortfolioCardRetrieve?.portfolioImages &&
+              Redux.state.ReceivedObject?.PortfolioCardRetrieve?.portfolioImages?.length ?
+                <div style={{ marginBlock: "20px" }}>
+                  <div className='container portfolio-card-single__more' style={{ marginBottom: "10px" }} >
+                    <h3>Details</h3>
+                  </div>
+                  <ImageSliderComponent Redux={Redux} />
+                </div>
+                : null
+            }
 
             {Redux.state.ReceivedObject?.PortfolioCardRetrieve?.detail &&
               <div className='container portfolio-card-single__more' >

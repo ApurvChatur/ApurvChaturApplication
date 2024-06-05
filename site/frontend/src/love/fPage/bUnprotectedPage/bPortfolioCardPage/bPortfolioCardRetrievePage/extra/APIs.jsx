@@ -27,6 +27,7 @@ const APIs = {
 
               links: serverResponse.retrieve.dLinks,
               references: serverResponse.retrieve.dReferences,
+              portfolioImages: serverResponse.retrieve.dPortfolioImages,
 						}
 				}})
       }
